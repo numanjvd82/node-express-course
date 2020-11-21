@@ -7,10 +7,20 @@ const userData = [
 ];
 
 app.get('/users', (req, res) => {
+  console.log(res);
   res.json({
     success: true,
     message: 'Succesfully Got Users.',
     users: userData,
+  });
+});
+
+app.get('/user:id', (req, res) => {
+  console.log(req.params.id);
+  res.json({
+    success: true,
+    message: 'Succesfully retrieved the user',
+    user: req.params.id,
   });
 });
 
